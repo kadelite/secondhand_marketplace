@@ -64,6 +64,28 @@ The project follows Clean Architecture with three main layers:
 - Image upload and caching
 - Push notifications
 
+#### Shipping & Transaction Handling
+- Generation of shipping labels (integrate with courier APIs: FedEx, DHL, UPS)
+- In-app shipping status updates and tracking
+- Escrow system holding payment until buyer confirms satisfactory receipt
+
+#### Payment Integration
+- Accept card payments (Visa, MasterCard, etc.), PayPal, Apple Pay, Google Pay
+- Secure payment gateways: Stripe/PayPal with PCI DSS compliance and HTTPS
+- Support in-app payments and payout to sellers' bank/PayPal accounts
+- Fraud protection: monitor transactions, flag suspicious activity, enforce payment holds for dispute cases
+
+#### Returns & Dispute Resolution
+- Allow buyer-initiated disputes for "not as described" items
+- Seller-set return policy for other cases
+- Automated and manual resolution workflows
+
+#### Trust & Safety
+- Buyer protection policies and guarantees
+- Item verification/inspection options
+- Encrypted messaging/chat (end-to-end if possible)
+- Security dashboard and reporting mechanism for users
+
 ### Navigation Structure
 The app uses a shell-based navigation with bottom tabs:
 - **Home**: Product feed and featured listings
