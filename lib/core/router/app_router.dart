@@ -10,6 +10,10 @@ import '../../presentation/pages/products/create_product_page.dart';
 import '../../presentation/pages/search/search_page.dart';
 import '../../presentation/pages/messages/messages_page.dart';
 import '../../presentation/pages/messages/chat_page.dart';
+import '../../presentation/pages/payment/payment_page.dart';
+import '../../presentation/pages/shipping/shipping_tracking_page.dart';
+import '../../presentation/pages/dispute/dispute_page.dart';
+import '../../presentation/pages/security/security_dashboard_page.dart';
 import '../../core/utils/jwt_service.dart';
 
 class AppRouter {
@@ -120,6 +124,50 @@ class AppRouter {
           final chatId = state.pathParameters['chatId']!;
           return ChatPage(chatId: chatId);
         },
+      ),
+
+      // Payment page
+      GoRoute(
+        path: '/payment/:productId',
+        name: 'payment',
+        builder: (context, state) {
+          final productId = state.pathParameters['productId']!;
+          final sellerId = state.uri.queryParameters['sellerId']!;
+          final amount = double.parse(state.uri.queryParameters['amount']!);
+          // TODO: Get product from repository
+          return PaymentPage(
+            product: null, // TODO: Load product
+            sellerId: sellerId,
+            totalAmount: amount,
+          );
+        },
+      ),
+
+      // Shipping tracking
+      GoRoute(
+        path: '/shipping/:shippingId',
+        name: 'shippingTracking',
+        builder: (context, state) {
+          final shippingId = state.pathParameters['shippingId']!;
+          return ShippingTrackingPage(shippingId: shippingId);
+        },
+      ),
+
+      // Dispute resolution
+      GoRoute(
+        path: '/dispute/:disputeId',
+        name: 'dispute',
+        builder: (context, state) {
+          final disputeId = state.pathParameters['disputeId']!;
+          return DisputePage(disputeId: disputeId);
+        },
+      ),
+
+      // Security dashboard
+      GoRoute(
+        path: '/security',
+        name: 'security',
+        builder: (context, state) => const SecurityDashboardPage(),
       ),
     ],
     errorBuilder: (context, state) => Scaffold(
