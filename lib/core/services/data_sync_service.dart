@@ -46,7 +46,7 @@ class DataSyncService {
   final StreamController<SyncStatus> _syncStatusController = StreamController<SyncStatus>.broadcast();
   
   // Connectivity monitoring
-  late StreamSubscription<ConnectivityResult> _connectivitySubscription;
+  late StreamSubscription<List<ConnectivityResult>> _connectivitySubscription;
   bool _isOnline = false;
   
   // Sync queue management
@@ -102,20 +102,20 @@ class DataSyncService {
 
   // Connectivity Management
   void _setupConnectivityListener() {
-    _connectivitySubscription = Connectivity().onConnectivityChanged.listen((result) {
-      _handleConnectivityChange(result);
+    _connectivitySubscription = Connectivity().onConnectivityChanged.listen((results) {
+      _handleConnectivityChange(results);
     });
 
     // Check initial connectivity
     Connectivity().checkConnectivity().then(_handleConnectivityChange);
   }
 
-  void _handleConnectivityChange(ConnectivityResult result) {
+  void _handleConnectivityChange(List<ConnectivityResult> results) {
     final wasOnline = _isOnline;
-    _isOnline = result != ConnectivityResult.none;
+    _isOnline = results.isNotEmpty && !results.contains(ConnectivityResult.none);
     
     if (_syncOnlyOnWifi) {
-      _isOnline = _isOnline && result == ConnectivityResult.wifi;
+      _isOnline = _isOnline && results.contains(ConnectivityResult.wifi);
     }
 
     if (!wasOnline && _isOnline) {
