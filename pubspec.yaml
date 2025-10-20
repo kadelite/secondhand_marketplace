@@ -1,5 +1,5 @@
 name: secondhand_marketplace
-description: "A new Flutter project."
+description: "A Flutter e-commerce platform for secondhand goods marketplace."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -31,20 +31,67 @@ dependencies:
   flutter:
     sdk: flutter
 
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
+  # Core UI
   cupertino_icons: ^1.0.8
+  material_symbols_icons: ^4.2801.0
+  
+  # State Management & Architecture
+  flutter_bloc: ^8.1.6
+  equatable: ^2.0.6
+  
+  # Networking & API
+  http: ^1.2.2
+  dio: ^5.7.0
+  retrofit: ^4.4.1
+  json_annotation: ^4.9.0
+  
+  # Local Storage & Cache
+  shared_preferences: ^2.3.2
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  
+  # Authentication & Security
+  jwt_decoder: ^2.0.1
+  crypto: ^3.0.6
+  local_auth: ^2.3.0
+  
+  # Navigation
+  go_router: ^14.6.1
+  
+  # Images & Media
+  image_picker: ^1.1.2
+  cached_network_image: ^3.4.1
+  
+  # UI Components & Forms
+  flutter_rating_bar: ^4.0.1
+  shimmer: ^3.0.0
+  
+  # Social & Communication
+  firebase_core: ^3.8.0
+  firebase_auth: ^5.3.3
+  cloud_firestore: ^5.5.0
+  firebase_messaging: ^15.1.4
+  
+  # Location & Maps
+  geolocator: ^13.0.2
+  
+  # Utilities
+  url_launcher: ^6.3.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  # The "flutter_lints" package below contains a set of recommended lints to
-  # encourage good coding practices. The lint set provided by the package is
-  # activated in the `analysis_options.yaml` file located at the root of your
-  # package. See that file for information about deactivating specific lint
-  # rules and activating additional ones.
+  # Code Generation
+  build_runner: ^2.4.13
+  json_serializable: ^6.8.0
+  retrofit_generator: ^8.2.1
+  hive_generator: ^2.0.1
+  
+  # Linting & Testing
   flutter_lints: ^5.0.0
+  bloc_test: ^9.1.7
+  mocktail: ^1.0.4
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
