@@ -88,10 +88,53 @@ dependencies:
   pointycastle: ^3.9.1
   crypto_keys: ^0.3.0+1
   
-  # Utilities
-  url_launcher: ^6.3.1
-  uuid: ^4.5.1
+  # Advanced Authentication
+  local_auth: ^2.3.0
+  firebase_auth: ^5.3.3
+  google_sign_in: ^6.2.1
+  sign_in_with_apple: ^6.1.2
+  otp: ^3.1.4
+  qr_code_scanner: ^1.0.1
+  
+  # Push Notifications & Messaging
+  firebase_messaging: ^15.1.4
+  flutter_local_notifications: ^17.2.3
+  pusher_channels_flutter: ^2.2.1
+  
+  # Localization & Accessibility
+  flutter_localizations:
+    sdk: flutter
   intl: ^0.19.0
+  easy_localization: ^3.0.7
+  flutter_tts: ^4.0.2
+  
+  # AI & ML Features
+  tflite_flutter: ^0.10.4
+  camera: ^0.11.0+2
+  image: ^4.2.0
+  
+  # Analytics & Monitoring
+  firebase_analytics: ^11.3.3
+  firebase_crashlytics: ^4.1.3
+  firebase_performance: ^0.10.0+8
+  sentry_flutter: ^8.9.0
+  
+  # File Handling & Storage
+  file_picker: ^8.1.2
+  path_provider: ^2.1.4
+  sqflite: ^2.4.0
+  
+  # Social Features
+  share_plus: ^10.0.2
+  url_launcher: ^6.3.1
+  webview_flutter: ^4.9.0
+  
+  # Utilities
+  uuid: ^4.5.1
+  device_info_plus: ^10.1.2
+  package_info_plus: ^8.0.2
+  connectivity_plus: ^6.0.5
+  permission_handler: ^11.3.1
 
 dev_dependencies:
   flutter_test:
